@@ -17,7 +17,7 @@ export default function Sidebar({ setActiveSection }: Props) {
 
   const SidebarContent = () => (
     <div className="p-4">
-      <h1 className="mb-4 text-2xl font-bold">My Portfolio</h1>
+      <h1 className="mb-4 text-lg font-bold">El Portfolio de Neva</h1>
       <nav>
         <Button
           variant="ghost"
@@ -75,7 +75,7 @@ export default function Sidebar({ setActiveSection }: Props) {
           <Button
             variant="outline"
             size="icon"
-            className="fixed right-6 top-4 z-50 md:right-4 md:hidden"
+            className="fixed right-4 top-4 z-50 md:right-4 md:hidden"
           >
             <Menu className="h-4 w-4" />
           </Button>

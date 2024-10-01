@@ -40,13 +40,13 @@ export default function Portfolio({}: Props) {
   };
 
   return (
-    <div className="flex h-screen flex-col bg-gray-100">
+    <div className="flex h-screen flex-col">
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <Sidebar setActiveSection={setActiveSection} />
 
         {/* Main Content */}
-        <div className="h-full flex-1 overflow-auto p-4 md:p-8">
+        <div className="h-full flex-1 overflow-auto p-4 md:p-8 lg:overflow-hidden">
           {renderContent()}
         </div>
       </div>
