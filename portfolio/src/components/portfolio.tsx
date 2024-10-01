@@ -19,7 +19,7 @@ export default function Portfolio({}: Props) {
       return (
         <div className="flex h-full items-center justify-center">
           <p className="text-lg text-gray-500">
-            Hover over a section to see details
+            Select a section to see details
           </p>
         </div>
       );
@@ -46,7 +46,9 @@ export default function Portfolio({}: Props) {
         <Sidebar setActiveSection={setActiveSection} />
 
         {/* Main Content */}
-        <div className="h-full flex-1 overflow-auto p-8">{renderContent()}</div>
+        <div className="h-full flex-1 overflow-auto p-4 md:p-8">
+          {renderContent()}
+        </div>
       </div>
       <Skills />
     </div>

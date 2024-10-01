@@ -9,14 +9,15 @@ type Props = {};
 
 export default function Social({}: Props) {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Social Links</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex space-x-4">
+        <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0">
           <Button
             variant="outline"
+            className="w-full sm:w-auto"
             onClick={() =>
               window.open("https://github.com/yourusername", "_blank")
             }
@@ -26,6 +27,7 @@ export default function Social({}: Props) {
           </Button>
           <Button
             variant="outline"
+            className="w-full sm:w-auto"
             onClick={() =>
               window.open("https://linkedin.com/in/yourusername", "_blank")
             }

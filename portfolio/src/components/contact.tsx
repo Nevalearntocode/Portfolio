@@ -7,12 +7,14 @@ type Props = {};
 
 export default function Contact({}: Props) {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Contact Me</CardTitle>
       </CardHeader>
       <CardContent>
-        <p>Feel free to reach out to me at: your.email@example.com</p>
+        <p className="text-sm sm:text-base">
+          Feel free to reach out to me at: your.email@example.com
+        </p>
       </CardContent>
     </Card>
   );
