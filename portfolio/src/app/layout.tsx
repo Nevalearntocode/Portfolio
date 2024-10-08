@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Import Inter from Google Fonts
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-// Configure Inter font
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter", // Custom variable name for Inter
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Specify font weights
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -21,9 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(`${inter.variable} antialiased`, "")}>
-        {children}
+    <html lang="en" className="h-full">
+      <body
+        className={cn(
+          `${inter.variable} font-sans antialiased`,
+          "mx-auto flex h-full max-w-[1536px] flex-col justify-center bg-primary/70 text-foreground",
+        )}
+      >
+        <div className="flex h-[690px] flex-col">{children}</div>
       </body>
     </html>
   );

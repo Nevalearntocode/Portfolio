@@ -27,7 +27,7 @@ export default function Project({
   technologies,
 }: ProjectType) {
   return (
-    <Card className="w-full">
+    <Card className="w-full pb-[72px] md:pb-0">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <CardDescription>{description}</CardDescription>
@@ -36,7 +36,7 @@ export default function Project({
         <div className="relative h-48 w-full lg:h-[370px]">
           <Image src={image} alt={name} fill className="rounded-md" />
         </div>
-        <div className="relative flex h-full w-full flex-col gap-4 rounded-lg bg-white p-2 shadow-md">
+        <div className="relative flex h-full w-full flex-col gap-4 rounded-lg p-2 shadow-md">
           <div>
             <h3 className="text-xl font-bold text-gray-800">What is this?</h3>
             <p className="text-sm text-gray-600 sm:text-base">{about}</p>

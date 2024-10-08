@@ -3,9 +3,7 @@
 import { skills } from "@/constants";
 import React, { useEffect, useRef, useState } from "react";
 
-type Props = {};
-
-export default function Skills({}: Props) {
+export default function Skills() {
   const skillsRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isScrolling, setIsScrolling] = useState(true);
@@ -45,11 +43,11 @@ export default function Skills({}: Props) {
 
   return (
     <div
-      className="bg-white p-4 shadow-md"
+      className="fixed bottom-0 left-0 right-0 bg-primary p-4 text-foreground shadow-md md:relative"
       onMouseEnter={() => setIsScrolling(false)}
       onMouseLeave={() => setIsScrolling(true)}
     >
-      <h2 className="mb-2 text-lg font-semibold">My Skills</h2>
+      <h2 className="mb-2 text-lg font-semibold text-white">My Skills</h2>
       <div
         ref={skillsRef}
         className="overflow-hidden whitespace-nowrap"
@@ -59,9 +57,9 @@ export default function Skills({}: Props) {
           {skills.concat(skills).map((skill, index) => (
             <span
               key={index}
-              className="m-1 inline-block rounded-full bg-gray-200 px-3 py-1 text-xs sm:text-sm"
+              className={`m-1 inline-block rounded-full ${skill.color} ${skill.textColor} px-3 py-1 text-xs transition-opacity duration-200 hover:opacity-80 sm:text-sm`}
             >
-              {skill}
+              {skill.name}
             </span>
           ))}
         </div>

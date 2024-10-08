@@ -7,21 +7,23 @@ import { Separator } from "./ui/separator";
 import { projects } from "@/constants";
 import { Section } from "@/types";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { cn } from "@/lib/utils";
 
 type Props = {
+  activeSection: Section | null;
   setActiveSection: Dispatch<SetStateAction<Section | null>>;
 };
 
-export default function Sidebar({ setActiveSection }: Props) {
+export default function Sidebar({ setActiveSection, activeSection }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const SidebarContent = () => (
-    <div className="p-4">
+    <div className="bg-primary p-4 text-primary-foreground">
       <h1 className="mb-4 text-lg font-bold">El Portfolio de Neva</h1>
       <nav>
         <Button
-          variant="ghost"
-          className="mb-2 w-full justify-start"
+          variant="secondary"
+          className={cn("mb-2 w-full justify-start text-secondary-foreground")}
           onMouseEnter={() => setActiveSection("about")}
           onClick={() => setIsOpen(false)}
         >
@@ -29,21 +31,23 @@ export default function Sidebar({ setActiveSection }: Props) {
           About
         </Button>
         <Button
-          variant="ghost"
-          className="mb-2 w-full justify-start"
+          variant="secondary"
+          className={cn("mb-2 w-full justify-start text-secondary-foreground")}
           onMouseEnter={() => setActiveSection("social")}
           onClick={() => setIsOpen(false)}
         >
           <Linkedin className="mr-2 h-4 w-4" />
           Social
         </Button>
-        <Separator className="my-2" />
-        <h2 className="mb-2 text-sm font-semibold text-gray-500">Projects</h2>
+        <Separator className="my-2 bg-secondary" />
+        <h2 className="mb-2 text-sm font-semibold text-secondary">Projects</h2>
         {projects.map((project) => (
           <Button
             key={project.id}
-            variant="ghost"
-            className="mb-2 w-full justify-start"
+            variant="secondary"
+            className={cn(
+              "mb-2 w-full justify-start text-secondary-foreground",
+            )}
             onMouseEnter={() => setActiveSection(project)}
             onClick={() => setIsOpen(false)}
           >
@@ -51,10 +55,10 @@ export default function Sidebar({ setActiveSection }: Props) {
             {project.name}
           </Button>
         ))}
-        <Separator className="my-2" />
+        <Separator className="my-2 bg-secondary" />
         <Button
-          variant="ghost"
-          className="w-full justify-start"
+          variant="secondary"
+          className="w-full justify-start text-secondary-foreground"
           onMouseEnter={() => setActiveSection("contact")}
           onClick={() => setIsOpen(false)}
         >
@@ -67,7 +71,7 @@ export default function Sidebar({ setActiveSection }: Props) {
 
   return (
     <>
-      <div className="hidden bg-white shadow-md md:block md:w-64">
+      <div className="hidden bg-primary shadow-md md:block md:w-64">
         <SidebarContent />
       </div>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -75,12 +79,12 @@ export default function Sidebar({ setActiveSection }: Props) {
           <Button
             variant="outline"
             size="icon"
-            className="fixed right-4 top-4 z-50 md:right-4 md:hidden"
+            className="fixed right-2 top-2 z-50 md:right-4 md:hidden"
           >
             <Menu className="h-4 w-4" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-64 p-0">
+        <SheetContent side="right" className="w-64 bg-primary p-0">
           <SidebarContent />
         </SheetContent>
       </Sheet>

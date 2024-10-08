@@ -9,9 +9,7 @@ import Social from "@/components/social";
 import Contact from "@/components/contact";
 import Project from "@/components/project";
 
-type Props = {};
-
-export default function Portfolio({}: Props) {
+export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<Section | null>("about");
 
   const renderContent = () => {
@@ -40,10 +38,13 @@ export default function Portfolio({}: Props) {
   };
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-screen flex-col bg-primary/80 text-foreground">
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <Sidebar setActiveSection={setActiveSection} />
+        <Sidebar
+          setActiveSection={setActiveSection}
+          activeSection={activeSection}
+        />
 
         {/* Main Content */}
         <div className="h-full flex-1 overflow-auto p-4 md:p-8 lg:overflow-hidden">
