@@ -1,4 +1,5 @@
 import { TypeIcon } from "lucide-react";
+import { skills } from "@/constants";
 
 type Project = {
   id: string;
@@ -15,5 +16,9 @@ type Project = {
 
 type Section = "about" | "social" | "contact" | Project;
 
+type ModalState = {
+  isOpen: boolean;
+  type: (typeof skills)[number]["name"] | null;
+};
 
-export type { Project, Section }
+export type { Project, Section, ModalState };

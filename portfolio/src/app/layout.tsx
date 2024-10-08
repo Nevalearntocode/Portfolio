@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import ReduxProvider from "@/components/providers/redux-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,9 @@ export default function RootLayout({
           "mx-auto flex h-full max-w-[1536px] flex-col justify-center bg-primary/70 text-foreground",
         )}
       >
-        <div className="flex h-[690px] flex-col">{children}</div>
+        <ReduxProvider>
+          <div className="flex h-[690px] flex-col">{children}</div>
+        </ReduxProvider>
       </body>
     </html>
   );
