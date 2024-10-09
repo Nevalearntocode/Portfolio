@@ -6,7 +6,7 @@ const initialState = {
   type: null,
 } as ModalState;
 
-const modalSlice = createSlice({
+const skillModalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
@@ -21,5 +21,5 @@ const modalSlice = createSlice({
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
-export default modalSlice.reducer;
+export const { openModal, closeModal } = skillModalSlice.actions;
+export default skillModalSlice.reducer;

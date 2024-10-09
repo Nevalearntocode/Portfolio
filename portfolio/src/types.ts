@@ -16,9 +16,16 @@ type Project = {
 
 type Section = "about" | "social" | "contact" | Project;
 
+type Skills = {
+  name: string;
+  color: string;
+  textColor: string;
+  icon?: string;
+}[];
+
 type ModalState = {
   isOpen: boolean;
   type: (typeof skills)[number]["name"] | null;
 };
 
-export type { Project, Section, ModalState };
+export type { Project, Section, ModalState, Skills };

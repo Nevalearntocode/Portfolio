@@ -10,7 +10,7 @@ export default function About() {
         <CardHeader className="rounded-xl bg-primary text-primary-foreground">
           <CardTitle>About Me</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col gap-4 rounded-lg shadow-lg">
+        <CardContent className="mt-4 flex flex-col gap-4 rounded-lg shadow-lg">
           <p className="text-sm leading-relaxed sm:text-base">
             Hi, my name is <strong className="font-bold">Minh Tâm</strong>
           </p>

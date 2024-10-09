@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, Skills } from "@/types";
 import { MapPinHouse, MessageCircle, ShoppingCart } from "lucide-react";
 
 const projects: Project[] = [
@@ -84,31 +84,108 @@ const projects: Project[] = [
   },
 ];
 
-const skills = [
-  { name: "Python", color: "bg-blue-500", textColor: "text-yellow-300" }, // Python's blue and yellow colors
-  { name: "Django", color: "bg-green-700", textColor: "text-white" }, // Django's green and white theme
+const skills: Skills = [
+  {
+    name: "Python",
+    color: "#3776AB", // blue
+    textColor: "#fde047", // good contrast with blue
+    icon: "/icons/python.svg",
+  },
+  {
+    name: "Django",
+    color: "#092E20", // dark green
+    textColor: "#FFFFFF", // white contrasts well with dark green
+    icon: "/icons/django.svg",
+  },
   {
     name: "Django REST Framework",
-    color: "bg-red-700",
-    textColor: "text-white",
-  }, // DRF red theme
-  { name: "Django Channels", color: "bg-purple-600", textColor: "text-white" }, // No fixed colors for Channels
-  { name: "Celery", color: "bg-green-500", textColor: "text-black" }, // Celery's green
-  { name: "Celery Beat", color: "bg-green-600", textColor: "text-white" }, // Close to Celery
-  { name: "JavaScript", color: "bg-yellow-500", textColor: "text-black" }, // JavaScript's yellow and black
-  { name: "Next.js", color: "bg-black", textColor: "text-white" }, // Next.js black and white
-  { name: "TypeScript", color: "bg-blue-700", textColor: "text-white" }, // TypeScript blue and white
-  { name: "React", color: "bg-blue-400", textColor: "text-black" }, // React's blue
-  { name: "Redux", color: "bg-purple-500", textColor: "text-white" }, // Redux purple
-  { name: "Tailwind CSS", color: "bg-teal-500", textColor: "text-white" }, // Tailwind teal
-  { name: "Shadcn", color: "bg-gray-800", textColor: "text-white" }, // Shadcn gray
-  { name: "Prisma", color: "bg-indigo-600", textColor: "text-white" }, // Prisma blue
-  { name: "Convex", color: "bg-orange-500", textColor: "text-white" }, // Convex's orange
-  { name: "Drizzle", color: "bg-yellow-600", textColor: "text-white" }, // Drizzle yellow
-  { name: "Docker", color: "bg-blue-600", textColor: "text-white" }, // Docker blue
-  { name: "Git", color: "bg-orange-600", textColor: "text-white" }, // Git's orange
-  { name: "PostgreSQL", color: "bg-blue-800", textColor: "text-white" }, // PostgreSQL blue
-  { name: "Redis", color: "bg-red-600", textColor: "text-white" }, // Redis red
+    color: "#b91c1c", // dark red
+    textColor: "#FFFFFF", // white contrasts well with dark red
+  },
+  {
+    name: "Celery",
+    color: "#37814A", // green
+    textColor: "#FFFFFF", // white contrasts better than black here
+    icon: "/icons/celery.svg",
+  },
+  {
+    name: "JavaScript",
+    color: "#F7DF1E", // bright yellow
+    textColor: "#000000", // black is good contrast with yellow
+    icon: "/icons/javascript.svg",
+  },
+  {
+    name: "TypeScript",
+    color: "#3178C6", // blue
+    textColor: "#FFFFFF", // white contrasts well with blue
+    icon: "/icons/typescript.svg",
+  },
+  {
+    name: "Next.js",
+    color: "#FFFFFF", // black
+    textColor: "#000000", // white contrasts best with black
+    icon: "/icons/nextdotjs.svg",
+  },
+  {
+    name: "React",
+    color: "#61DAFB", // light blue
+    textColor: "#000000", // black contrasts well with light blue
+    icon: "/icons/react.svg",
+  },
+  {
+    name: "Redux",
+    color: "#764ABC", // purple
+    textColor: "#FFFFFF", // white contrasts well with purple
+    icon: "/icons/redux.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    color: "#06B6D4", // teal
+    textColor: "#FFFFFF", // white contrasts well with teal
+    icon: "/icons/tailwindcss.svg",
+  },
+  {
+    name: "Shadcn",
+    color: "#FFFFFF", // black
+    textColor: "#000000", // white contrasts best with black
+    icon: "/icons/shadcnui.svg",
+  },
+  {
+    name: "Prisma",
+    color: "#FFFFFF", // dark gray/blue
+    textColor: "#2D3748", // white contrasts well with dark colors
+    icon: "/icons/prisma.svg",
+  },
+  {
+    name: "Drizzle",
+    color: "#C5F74F", // lime green
+    textColor: "#000000", // black contrasts well with lime green
+    icon: "/icons/drizzle.svg",
+  },
+  {
+    name: "Docker",
+    color: "#2496ED", // blue
+    textColor: "#FFFFFF", // white contrasts well with blue
+    icon: "/icons/docker.svg",
+  },
+  {
+    name: "Git",
+    color: "#F05032", // orange
+    textColor: "#FFFFFF", // white contrasts well with orange
+    icon: "/icons/git.svg",
+  },
+  {
+    name: "PostgreSQL",
+    color: "#4169E1", // royal blue
+    textColor: "#FFFFFF", // white contrasts well with royal blue
+    icon: "/icons/postgresql.svg",
+  },
+  {
+    name: "Redis",
+    color: "#FF4438", // bright red
+    textColor: "#FFFFFF", // white contrasts well with red
+    icon: "/icons/redis.svg",
+  },
 ];
 
 export { projects, skills };

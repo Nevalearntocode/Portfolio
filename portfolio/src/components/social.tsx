@@ -32,16 +32,16 @@ export default function Social({}: Props) {
   };
   return (
     <div className="flex h-full w-full items-start justify-center md:items-center">
-      <Card className="">
-        <CardHeader>
+      <Card className="w-full max-w-3xl bg-background text-foreground">
+        <CardHeader className="rounded-xl bg-primary text-primary-foreground">
           <CardTitle>Social Links</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="flex flex-col space-y-4">
+        <CardContent className="p-2 md:p-6">
+          <div className="flex flex-col space-y-6">
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   className="w-32"
                   onClick={() =>
                     window.open("https://github.com/yourusername", "_blank")
@@ -51,7 +51,7 @@ export default function Social({}: Props) {
                   GitHub
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   className="w-32"
                   onClick={() =>
                     window.open(
@@ -64,7 +64,7 @@ export default function Social({}: Props) {
                   LinkedIn
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   className="w-32"
                   onClick={() =>
                     window.open(
@@ -77,7 +77,7 @@ export default function Social({}: Props) {
                   Facebook
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   className="w-32"
                   onClick={() =>
                     window.open(
@@ -90,36 +90,39 @@ export default function Social({}: Props) {
                   Discord
                 </Button>
               </div>
-              <div className="mt-8">
-                <div className="hidden lg:flex">
+              <div className="mt-4 flex flex-col">
+                <h3 className="mb-6 ml-4 text-lg font-semibold md:ml-0">
+                  GitHub Contributions
+                </h3>
+                <div className="hidden w-full items-center justify-center lg:flex">
                   <GitHubCalendar
                     username="Nevalearntocode"
                     colorScheme="light"
                     transformData={(data) => selectLastHalfYear(data, 12)}
                   />
                 </div>
-                <div className="hidden sm:flex lg:hidden">
+                <div className="hidden w-full items-center justify-center sm:flex lg:hidden">
                   <GitHubCalendar
                     username="Nevalearntocode"
                     colorScheme="light"
-                    transformData={(data) => selectLastHalfYear(data, 6)}
+                    transformData={(data) => selectLastHalfYear(data, 9)}
                     labels={{
                       totalCount:
-                        "{{count}} contributions in the last six months",
+                        "{{count}} contributions in the last nine months",
                     }}
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex sm:hidden">
+          <div className="flex w-full items-center justify-center sm:hidden">
             <GitHubCalendar
               username="Nevalearntocode"
               colorScheme="light"
               hideColorLegend
-              transformData={(data) => selectLastHalfYear(data, 5)}
+              transformData={(data) => selectLastHalfYear(data, 9)}
               labels={{
-                totalCount: "{{count}} contributions in the last five months",
+                totalCount: "{{count}} contributions in the last nine months",
               }}
             />
           </div>

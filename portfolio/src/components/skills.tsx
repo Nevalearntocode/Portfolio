@@ -1,7 +1,10 @@
 "use client";
 
-import { skills } from "@/constants";
+import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
+import { skills } from "@/constants";
+
+// Example URL structure to fetch icons from Simple Icons
 
 export default function Skills() {
   const skillsRef = useRef<HTMLDivElement>(null);
@@ -26,7 +29,6 @@ export default function Skills() {
     };
 
     let intervalId: NodeJS.Timeout;
-
     const startScrolling = () => {
       intervalId = setInterval(scroll, 20);
     };
@@ -42,7 +44,7 @@ export default function Skills() {
   }, [scrollPosition]);
 
   const handleSkillClick = (skillName: string) => {
-    console.log(skillName); // Logs the clicked skill name
+    console.log(skillName); // Log the clicked skill
   };
 
   return (
@@ -61,9 +63,23 @@ export default function Skills() {
           {skills.concat(skills).map((skill, index) => (
             <span
               key={index}
-              className={`m-1 inline-block rounded-full ${skill.color} ${skill.textColor} cursor-pointer px-3 py-1 text-xs transition-opacity duration-200 hover:opacity-80 sm:text-sm`}
-              onClick={() => handleSkillClick(skill.name)} // Add onClick handler
+              className={cn(
+                `m-1 inline-block rounded-full px-3 py-1 text-xs transition-opacity duration-200 hover:opacity-80 sm:text-sm`,
+              )}
+              style={{
+                backgroundColor: skill.color,
+                color: skill.textColor,
+              }}
+              onClick={() => handleSkillClick(skill.name)}
             >
+              {skill.icon && (
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="mr-2 inline-block h-5 w-5"
+                  style={{}}
+                />
+              )}
               {skill.name}
             </span>
           ))}
