@@ -3,10 +3,13 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
 import { skills } from "@/constants";
+import { useAppDispatch } from "@/redux/use-store";
+import { openModal } from "@/redux/slices/skill-modal-slice";
 
 // Example URL structure to fetch icons from Simple Icons
 
 export default function Skills() {
+  const dispatch = useAppDispatch();
   const skillsRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isScrolling, setIsScrolling] = useState(true);
@@ -44,7 +47,7 @@ export default function Skills() {
   }, [scrollPosition]);
 
   const handleSkillClick = (skillName: string) => {
-    console.log(skillName); // Log the clicked skill
+    dispatch(openModal(skillName));
   };
 
   return (

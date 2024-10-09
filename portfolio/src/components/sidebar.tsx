@@ -28,7 +28,7 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
           onClick={() => setIsOpen(false)}
         >
           <User className="mr-2 h-4 w-4" />
-          About
+          <span className="text-xs md:text-sm xl:text-base">About</span>
         </Button>
         <Button
           variant="secondary"
@@ -37,7 +37,7 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
           onClick={() => setIsOpen(false)}
         >
           <Linkedin className="mr-2 h-4 w-4" />
-          Social
+          <span className="text-xs md:text-sm xl:text-base">Social</span>
         </Button>
         <Separator className="my-2 bg-secondary" />
         <h2 className="mb-2 text-sm font-semibold text-secondary">Projects</h2>
@@ -52,7 +52,9 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
             onClick={() => setIsOpen(false)}
           >
             <project.icon className="mr-2 h-4 w-4" />
-            {project.name}
+            <span className="md:text-xs lg:text-sm xl:text-base">
+              {project.name}
+            </span>
           </Button>
         ))}
         <Separator className="my-2 bg-secondary" />
@@ -63,7 +65,7 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
           onClick={() => setIsOpen(false)}
         >
           <Mail className="mr-2 h-4 w-4" />
-          Contact
+          <span className="text-xs md:text-sm xl:text-base">Contact</span>
         </Button>
       </nav>
     </div>
@@ -71,7 +73,7 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
 
   return (
     <>
-      <div className="hidden bg-primary shadow-md md:block md:w-64">
+      <div className="hidden bg-primary shadow-md transition-all duration-300 ease-in-out sm:w-40 md:block md:w-48 lg:w-56 xl:w-64">
         <SidebarContent />
       </div>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
