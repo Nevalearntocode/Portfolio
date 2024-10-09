@@ -65,7 +65,7 @@ export default function Project({
       </CardContent>
       <CardFooter className="flex flex-col justify-between gap-2 sm:flex-row">
         <Button
-          variant="outline"
+          variant="secondary"
           className="w-full sm:w-auto"
           onClick={() => window.open(githubLink, "_blank")}
         >

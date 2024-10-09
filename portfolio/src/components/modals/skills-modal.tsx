@@ -2,7 +2,6 @@
 
 import { closeModal } from "@/redux/slices/skill-modal-slice";
 import { useAppDispatch, useAppSelector } from "@/redux/use-store";
-import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -15,6 +14,10 @@ import DjangoRestFramework from "./django-rest-framework";
 import Celery from "./celery";
 import JavaScript from "./javascript";
 import TypeScript from "./typescript";
+import Nextjs from "./nextjs";
+import ReactSkill from "./react-skill";
+import Redux from "./redux";
+import TailwindCSS from "./tailwindcss";
 
 type Props = {};
 
@@ -57,6 +60,10 @@ export default function SkillsModal({}: Props) {
         {type === "Celery" && <Celery type={type} />}
         {type === "JavaScript" && <JavaScript type={type} />}
         {type === "TypeScript" && <TypeScript type={type} />}
+        {type === "Next.js" && <Nextjs type={type} />}
+        {type === "React" && <ReactSkill type={type} />}
+        {type === "Redux" && <Redux type={type} />}
+        {type === "Tailwind CSS" && <TailwindCSS type={type} />}
       </DialogContent>
     </Dialog>
   );

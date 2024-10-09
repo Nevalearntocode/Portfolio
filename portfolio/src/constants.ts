@@ -121,17 +121,18 @@ const skills: Skills = [
     icon: "/icons/typescript.svg",
   },
   {
-    name: "Next.js",
-    color: "#FFFFFF", // black
-    textColor: "#000000", // white contrasts best with black
-    icon: "/icons/nextdotjs.svg",
-  },
-  {
     name: "React",
     color: "#61DAFB", // light blue
     textColor: "#000000", // black contrasts well with light blue
     icon: "/icons/react.svg",
   },
+  {
+    name: "Next.js",
+    color: "#FFFFFF", // black
+    textColor: "#000000", // white contrasts best with black
+    icon: "/icons/nextdotjs.svg",
+  },
+
   {
     name: "Redux",
     color: "#764ABC", // purple

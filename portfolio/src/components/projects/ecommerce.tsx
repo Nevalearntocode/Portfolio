@@ -1,14 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = {
-  type?: "front" | "back";
-};
+type Props = {};
 
-export default function Airbnb({ type = "back" }: Props) {
+export default function Ecommerce({}: Props) {
   return (
     <li className="flex w-full justify-between">
-      Airbnb Clone {type === "back" ? "API" : "UI"}
+      Fullstack CMS Ecommerce
       <div className="flex gap-4">
         <Link href={`/`} className="">
           <span className="text-blue-500 underline">Live here</span>
