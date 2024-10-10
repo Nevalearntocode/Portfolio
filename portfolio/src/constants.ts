@@ -146,7 +146,7 @@ const skills: Skills = [
     icon: "/icons/tailwindcss.svg",
   },
   {
-    name: "Shadcn/ui",
+    name: "Shadcn/UI",
     color: "#FFFFFF", // black
     textColor: "#000000", // white contrasts best with black
     icon: "/icons/shadcnui.svg",

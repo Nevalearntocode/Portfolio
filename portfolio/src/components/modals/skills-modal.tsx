@@ -9,22 +9,24 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { skills } from "@/constants";
-import Django from "./django";
-import DjangoRestFramework from "./django-rest-framework";
-import Celery from "./celery";
-import JavaScript from "./javascript";
-import TypeScript from "./typescript";
-import Nextjs from "./nextjs";
-import ReactSkill from "./react-skill";
-import Redux from "./redux";
-import TailwindCSS from "./tailwindcss";
-import Redis from "./Redis";
-import PostgreSQL from "./PostgreSQL";
-import Git from "./Git";
-import Docker from "./Docker";
-import Drizzle from "./Drizzle";
-import Prisma from "./Prisma";
-import Shadcnui from "./shadcnui";
+import Django from "@/components/modals/django";
+import DjangoRestFramework from "@/components/modals/django-rest-framework";
+import Celery from "@/components/modals/celery";
+import JavaScript from "@/components/modals/javascript";
+import TypeScript from "@/components/modals/typescript";
+import Nextjs from "@/components/modals/nextjs";
+import ReactSkill from "@/components/modals/react-skill";
+import Redux from "@/components/modals/redux";
+import TailwindCSS from "@/components/modals/tailwindcss";
+import Shadcnui from "@/components/modals/shadcnui";
+import Python from "@/components/modals/python";
+import Prisma from "@/components/modals/prisma";
+import Drizzle from "@/components/modals/drizzle";
+import Docker from "@/components/modals/docker";
+import Git from "@/components/modals/git";
+import PostgreSQL from "@/components/modals/postgresql";
+import Redis from "@/components/modals/redis";
+import Convex from "@/components/modals/convex";
 
 type Props = {};
 
@@ -60,6 +62,7 @@ export default function SkillsModal({}: Props) {
             {type}
           </DialogTitle>
         </DialogHeader>
+        {type === "Python" && <Python type={type} />}
         {type === "Django" && <Django type={type} />}
         {type === "Django REST Framework" && (
           <DjangoRestFramework type={type} />
@@ -71,9 +74,10 @@ export default function SkillsModal({}: Props) {
         {type === "React" && <ReactSkill type={type} />}
         {type === "Redux" && <Redux type={type} />}
         {type === "Tailwind CSS" && <TailwindCSS type={type} />}
-        {type === "Shadcn/ui" && <Shadcnui type={type} />}
+        {type === "Shadcn/UI" && <Shadcnui type={type} />}
         {type === "Prisma" && <Prisma type={type} />}
         {type === "Drizzle" && <Drizzle type={type} />}
+        {type === "Convex" && <Convex type={type} />}
         {type === "Docker" && <Docker type={type} />}
         {type === "Git" && <Git type={type} />}
         {type === "PostgreSQL" && <PostgreSQL type={type} />}

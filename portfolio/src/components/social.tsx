@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import GitHubCalendar, { Activity } from "react-github-calendar";
-import Image from "next/image";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
 type Props = {};
@@ -31,7 +31,13 @@ export default function Social({}: Props) {
     });
   };
   return (
-    <div className="flex h-full w-full items-start justify-center md:items-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="flex h-full w-full items-start justify-center md:items-center"
+    >
       <Card className="w-full max-w-3xl bg-background text-foreground">
         <CardHeader className="rounded-xl bg-primary text-primary-foreground">
           <CardTitle>Social Links</CardTitle>
@@ -68,7 +74,7 @@ export default function Social({}: Props) {
                   className="w-32"
                   onClick={() =>
                     window.open(
-                      "https://linkedin.com/in/yourusername",
+                      "https://facebook.com/yourusername", // Corrected URL
                       "_blank",
                     )
                   }
@@ -81,7 +87,7 @@ export default function Social({}: Props) {
                   className="w-32"
                   onClick={() =>
                     window.open(
-                      "https://linkedin.com/in/yourusername",
+                      "https://discord.com/users/yourusername", //Corrected URL
                       "_blank",
                     )
                   }
@@ -128,6 +134,6 @@ export default function Social({}: Props) {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 }
