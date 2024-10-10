@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button } from "./ui/button";
 import { Linkedin, Mail, User, Menu } from "lucide-react";
 import { Separator } from "./ui/separator";
@@ -15,26 +15,35 @@ type Props = {
 };
 
 export default function Sidebar({ setActiveSection, activeSection }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleSectionClick = (section: Section) => {
+    setActiveSection(section);
+    setIsOpen(false);
+  };
 
   const SidebarContent = () => (
     <div className="bg-primary p-4 text-primary-foreground">
       <h1 className="mb-4 text-lg font-bold">El Portfolio de Neva</h1>
-      <nav>
+      <nav className="space-y-2">
         <Button
-          variant="secondary"
-          className={cn("mb-2 w-full justify-start text-secondary-foreground")}
-          onMouseEnter={() => setActiveSection("about")}
-          onClick={() => setIsOpen(false)}
+          variant="outline"
+          className={cn(
+            "w-full justify-start text-secondary-foreground",
+            activeSection === "about" && "bg-accent text-accent-foreground",
+          )}
+          onClick={() => handleSectionClick("about")}
         >
           <User className="mr-2 h-4 w-4" />
           <span className="text-xs md:text-sm xl:text-base">About</span>
         </Button>
         <Button
-          variant="secondary"
-          className={cn("mb-2 w-full justify-start text-secondary-foreground")}
-          onMouseEnter={() => setActiveSection("social")}
-          onClick={() => setIsOpen(false)}
+          variant="outline"
+          className={cn(
+            "w-full justify-start text-secondary-foreground",
+            activeSection === "social" && "bg-accent text-accent-foreground",
+          )}
+          onClick={() => handleSectionClick("social")}
         >
           <Linkedin className="mr-2 h-4 w-4" />
           <span className="text-xs md:text-sm xl:text-base">Social</span>
@@ -44,12 +53,12 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
         {projects.map((project) => (
           <Button
             key={project.id}
-            variant="secondary"
+            variant="outline"
             className={cn(
-              "mb-2 w-full justify-start text-secondary-foreground",
+              "w-full justify-start text-secondary-foreground",
+              activeSection === project && "bg-accent text-accent-foreground",
             )}
-            onMouseEnter={() => setActiveSection(project)}
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleSectionClick(project)}
           >
             <project.icon className="mr-2 h-4 w-4" />
             <span className="md:text-xs lg:text-sm xl:text-base">
@@ -59,10 +68,12 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
         ))}
         <Separator className="my-2 bg-secondary" />
         <Button
-          variant="secondary"
-          className="w-full justify-start text-secondary-foreground"
-          onMouseEnter={() => setActiveSection("contact")}
-          onClick={() => setIsOpen(false)}
+          variant="outline"
+          className={cn(
+            "w-full justify-start text-secondary-foreground",
+            activeSection === "contact" && "bg-accent text-accent-foreground",
+          )}
+          onClick={() => handleSectionClick("contact")}
         >
           <Mail className="mr-2 h-4 w-4" />
           <span className="text-xs md:text-sm xl:text-base">Contact</span>

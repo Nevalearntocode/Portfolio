@@ -23,7 +23,9 @@ export default function ReactSkill({ type }: Props) {
         </ul>
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-lg font-semibold">What have I built {type}?</h3>
+        <h3 className="text-lg font-semibold">
+          what have i built with {type}?
+        </h3>
         <p>All of my projects are built using {type}.</p>
         <p>
           Check out my{" "}

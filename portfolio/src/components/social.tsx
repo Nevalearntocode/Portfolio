@@ -41,7 +41,7 @@ export default function Social({}: Props) {
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 <Button
-                  variant="secondary"
+                  variant="outline"
                   className="w-32"
                   onClick={() =>
                     window.open("https://github.com/yourusername", "_blank")
@@ -51,7 +51,7 @@ export default function Social({}: Props) {
                   GitHub
                 </Button>
                 <Button
-                  variant="secondary"
+                  variant="outline"
                   className="w-32"
                   onClick={() =>
                     window.open(
@@ -64,7 +64,7 @@ export default function Social({}: Props) {
                   LinkedIn
                 </Button>
                 <Button
-                  variant="secondary"
+                  variant="outline"
                   className="w-32"
                   onClick={() =>
                     window.open(
@@ -77,7 +77,7 @@ export default function Social({}: Props) {
                   Facebook
                 </Button>
                 <Button
-                  variant="secondary"
+                  variant="outline"
                   className="w-32"
                   onClick={() =>
                     window.open(

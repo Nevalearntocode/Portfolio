@@ -1,11 +1,14 @@
-"use client"
+"use client";
 
-import React from 'react'
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
 
-type Props = {}
+type Props = {
+  setState: React.Dispatch<React.SetStateAction<"main" | "sub">>;
+};
 
-export default function AboutMain({}: Props) {
+export default function AboutMain({ setState }: Props) {
   return (
     <div className="flex h-full w-full items-start justify-center md:items-center">
       <Card className="w-full bg-background text-foreground lg:w-1/2">
@@ -28,11 +31,16 @@ export default function AboutMain({}: Props) {
             are always new problems and you always need to learn new things to
             solve them. I've got the correct mindset now.{" "}
           </p>
-          <p>
-            <strong className="italic">
-              "Strive for progress, not perfection."
-            </strong>
-          </p>
+          <div className="relative flex justify-between">
+            <p>
+              <strong className="italic">
+                "Strive for progress, not perfection."
+              </strong>
+            </p>
+            <Button variant="default" onClick={() => setState("sub")}>
+              More about me?
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>

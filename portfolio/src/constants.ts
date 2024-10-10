@@ -164,6 +164,11 @@ const skills: Skills = [
     icon: "/icons/drizzle.svg",
   },
   {
+    name: "Convex",
+    color: "#0D3B66", // lime green
+    textColor: "#FAF0CA", // black contrasts well with lime green
+  },
+  {
     name: "Docker",
     color: "#2496ED", // blue
     textColor: "#FFFFFF", // white contrasts well with blue

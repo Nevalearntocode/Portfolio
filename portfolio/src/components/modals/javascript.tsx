@@ -19,7 +19,7 @@ export default function JavaScript({ type }: Props) {
       </div>
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold">
-          What have I built with {type}?
+          what have i built with {type}?
         </h3>
         <p>
           Most of my projects are built using JavaScript under the hood in the

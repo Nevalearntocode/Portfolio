@@ -19,7 +19,7 @@ export default function Celery({ type }: Props) {
       </div>
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold">
-          What have I built with {type}?
+          what have i built with {type}?
         </h3>
         <ul className="text space-y-2 text-sm text-gray-700">
           <Airbnb />

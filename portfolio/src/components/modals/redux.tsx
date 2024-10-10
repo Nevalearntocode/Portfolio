@@ -20,11 +20,13 @@ export default function Redux({ type }: Props) {
         </ul>
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-lg font-semibold">What have I built {type}?</h3>
+        <h3 className="text-lg font-semibold">
+          what have i built with {type}?
+        </h3>
         <ul className="text space-y-2 text-sm text-gray-700">
-          <Airbnb />
-          <Chat />
-          <SimpleAuthentication />
+          <Airbnb type={`redux`} />
+          <Chat type="redux" />
+          <SimpleAuthentication type="redux" />
         </ul>
       </div>
     </div>

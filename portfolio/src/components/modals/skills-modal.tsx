@@ -18,6 +18,13 @@ import Nextjs from "./nextjs";
 import ReactSkill from "./react-skill";
 import Redux from "./redux";
 import TailwindCSS from "./tailwindcss";
+import Redis from "./Redis";
+import PostgreSQL from "./PostgreSQL";
+import Git from "./Git";
+import Docker from "./Docker";
+import Drizzle from "./Drizzle";
+import Prisma from "./Prisma";
+import Shadcnui from "./shadcnui";
 
 type Props = {};
 
@@ -64,6 +71,13 @@ export default function SkillsModal({}: Props) {
         {type === "React" && <ReactSkill type={type} />}
         {type === "Redux" && <Redux type={type} />}
         {type === "Tailwind CSS" && <TailwindCSS type={type} />}
+        {type === "Shadcn/ui" && <Shadcnui type={type} />}
+        {type === "Prisma" && <Prisma type={type} />}
+        {type === "Drizzle" && <Drizzle type={type} />}
+        {type === "Docker" && <Docker type={type} />}
+        {type === "Git" && <Git type={type} />}
+        {type === "PostgreSQL" && <PostgreSQL type={type} />}
+        {type === "Redis" && <Redis type={type} />}
       </DialogContent>
     </Dialog>
   );
