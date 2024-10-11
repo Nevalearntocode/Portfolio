@@ -29,6 +29,26 @@ const projects: Project[] = [
       "Redux",
       "TailwindCSS",
     ],
+    images: [
+      "/projects/airbnb/homepage-1.png",
+      "/projects/airbnb/homepage-3.png",
+      "/projects/airbnb/add-property-1.png",
+      "/projects/airbnb/chat-interface-1.png",
+      "/projects/airbnb/login.png",
+      "/projects/airbnb/profile.png",
+      "/projects/airbnb/property-1.png",
+      "/projects/airbnb/property-2.png",
+      "/projects/airbnb/register.png",
+      "/projects/airbnb/search-1.png",
+      "/projects/airbnb/search-2.png",
+      "/projects/airbnb/reservation-1.png",
+      "/projects/airbnb/reservation-2.png",
+    ],
+    mobileImages: [
+      "/projects/airbnb/homepage-2.png",
+      "/projects/airbnb/chat-interface-2.png",
+      "/projects/airbnb/chat-interface-3.png",
+    ],
   },
   {
     id: "airbnb-clone",
@@ -55,6 +75,8 @@ const projects: Project[] = [
       "Redux",
       "TailwindCSS",
     ],
+    images: [],
+    mobileImages: [],
   },
   {
     id: "ecommerce-cms",
@@ -81,6 +103,8 @@ const projects: Project[] = [
       "Redux",
       "TailwindCSS",
     ],
+    images: [],
+    mobileImages: [],
   },
 ];
 

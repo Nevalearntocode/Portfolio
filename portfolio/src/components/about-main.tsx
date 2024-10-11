@@ -3,6 +3,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 type Props = {
   setState: React.Dispatch<React.SetStateAction<"main" | "sub">>;
@@ -10,8 +11,15 @@ type Props = {
 
 export default function AboutMain({ setState }: Props) {
   return (
-    <div className="flex h-full w-full items-start justify-center md:items-center">
-      <Card className="w-full bg-background text-foreground lg:w-1/2">
+    <motion.div
+      key="main"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="flex h-full w-full items-start justify-center md:items-center"
+    >
+      <Card className="w-full bg-background text-foreground lg:w-3/4 xl:w-1/2">
         <CardHeader className="rounded-xl bg-primary text-primary-foreground">
           <CardTitle>About Me</CardTitle>
         </CardHeader>
@@ -31,18 +39,20 @@ export default function AboutMain({ setState }: Props) {
             are always new problems and you always need to learn new things to
             solve them. I've got the correct mindset now.{" "}
           </p>
-          <div className="relative flex justify-between">
-            <p>
-              <strong className="italic">
-                "Strive for progress, not perfection."
-              </strong>
+          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between">
+            <p className="font-bold italic">
+              "Strive for progress, not perfection."
             </p>
-            <Button variant="default" onClick={() => setState("sub")}>
-              More about me?
+            <Button
+              variant="default"
+              onClick={() => setState("sub")}
+              className="mt-4 flex self-end whitespace-nowrap md:mt-0"
+            >
+              More about me
             </Button>
           </div>
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 }

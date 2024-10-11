@@ -12,6 +12,8 @@ type Project = {
   about: string;
   features: string[];
   technologies: string[];
+  images: string[];
+  mobileImages: string[];
 };
 
 type Section = "about" | "social" | "contact" | Project;

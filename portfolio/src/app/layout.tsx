@@ -13,7 +13,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Neva Portfolio",
-  description: "Personal portfolio of Neva",
+  description: "Neva's portfolio site",
+  icons: {
+    icon: "/svg-logo.png",
+  },
 };
 
 export default function RootLayout({

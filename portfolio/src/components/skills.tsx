@@ -67,7 +67,7 @@ export default function Skills() {
             <span
               key={index}
               className={cn(
-                `m-1 inline-block rounded-full px-3 py-1 text-xs transition-opacity duration-200 hover:opacity-80 sm:text-sm`,
+                `m-1 inline-block cursor-pointer rounded-full px-3 py-1 text-xs transition-opacity duration-200 hover:opacity-80 sm:text-sm`,
               )}
               style={{
                 backgroundColor: skill.color,

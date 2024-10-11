@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { ChevronLeft } from "lucide-react";
+import AboutMain from "./about-main";
 
 export default function About() {
   const [state, setState] = useState<"main" | "sub">("main");
@@ -12,50 +13,7 @@ export default function About() {
   return (
     <AnimatePresence mode="wait">
       {state === "main" ? (
-        <motion.div
-          key="main"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-          className="flex h-full w-full items-start justify-center md:items-center"
-        >
-          <Card className="w-full bg-background text-foreground lg:w-3/4 xl:w-1/2">
-            <CardHeader className="rounded-xl bg-primary text-primary-foreground">
-              <CardTitle>About Me</CardTitle>
-            </CardHeader>
-            <CardContent className="mt-4 flex flex-col gap-4 rounded-lg shadow-lg">
-              <p className="text-sm leading-relaxed sm:text-base">
-                Hi, my name is <strong className="font-bold">Minh Tâm</strong>
-              </p>
-              <p className="text-base leading-relaxed">
-                I'm a <strong>full-stack developer</strong> specializing in{" "}
-                <strong>Django</strong> and <strong>Next.js</strong>. I've built
-                various projects with advanced features to hone and prove my
-                skills, while refining my resume for the job hunt.
-              </p>
-              <p className="text-base leading-relaxed">
-                Throughout my coding journey, I've learned that you can't
-                possibly know everything and you will never be ready for
-                everything. There are always new problems and you always need to
-                learn new things to solve them. I've got the correct mindset
-                now.{" "}
-              </p>
-              <div className="relative flex items-center justify-between">
-                <p className="font-bold italic">
-                  "Strive for progress, not perfection."
-                </p>
-                <Button
-                  variant="default"
-                  onClick={() => setState("sub")}
-                  className="whitespace-nowrap"
-                >
-                  More about me
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+        <AboutMain setState={setState} />
       ) : (
         <motion.div
           key="sub"
@@ -80,8 +38,8 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 gap-6 p-4 md:h-[calc(100%-4rem)] md:grid-cols-2 md:gap-8 md:p-8">
             <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-lg">Skills</CardTitle>
+              <CardHeader className="mb-4 rounded-xl bg-primary">
+                <CardTitle className="text-lg text-white">Skills</CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 Proficient in Django, Next.js, React, and various other web
@@ -90,8 +48,8 @@ export default function About() {
               </CardContent>
             </Card>
             <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-lg">Experience</CardTitle>
+              <CardHeader className="mb-4 rounded-xl bg-primary">
+                <CardTitle className="text-lg text-white">Experience</CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 Developed multiple full-stack applications, including a
@@ -100,8 +58,8 @@ export default function About() {
               </CardContent>
             </Card>
             <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-lg">Education</CardTitle>
+              <CardHeader className="mb-4 rounded-xl bg-primary">
+                <CardTitle className="text-lg text-white">Education</CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 Self-taught developer with a passion for continuous learning.
@@ -110,8 +68,8 @@ export default function About() {
               </CardContent>
             </Card>
             <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-lg">Goals</CardTitle>
+              <CardHeader className="mb-4 rounded-xl bg-primary">
+                <CardTitle className="text-lg text-white">Goals</CardTitle>
               </CardHeader>
               <CardContent className="text-sm">
                 Seeking opportunities to contribute to innovative projects,

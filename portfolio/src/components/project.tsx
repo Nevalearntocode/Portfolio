@@ -1,85 +1,89 @@
 "use client";
 
-import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
-import { Button } from "./ui/button";
-import { Github, Globe } from "lucide-react";
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { Project as ProjectType } from "@/types";
-import { Separator } from "./ui/separator";
-import { Badge } from "./ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
+import ProjectMain from "./project-main";
 
-export default function Project({
-  description,
-  image,
-  githubLink,
-  liveLink,
-  name,
-  about,
-  features,
-  technologies,
-}: ProjectType) {
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: {
+    duration: 0.3,
+  },
+};
+
+export default function Project(project: ProjectType) {
+  const [state, setState] = useState<"main" | "sub">("main");
+  const { images, mobileImages, name } = project;
+
   return (
-    <Card className="w-full pb-[72px] md:pb-0">
-      <CardHeader>
-        <CardTitle>{name}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-4 lg:flex-row">
-        <div className="relative h-48 w-full lg:h-[370px]">
-          <Image src={image} alt={name} fill className="rounded-md" />
-        </div>
-        <div className="relative flex h-full w-full flex-col gap-4 rounded-lg p-2 shadow-md">
-          <div>
-            <h3 className="text-xl font-bold text-gray-800">What is this?</h3>
-            <p className="text-sm text-gray-600 sm:text-base">{about}</p>
+    <AnimatePresence mode="wait">
+      {state === "main" ? (
+        <ProjectMain project={project} setState={setState} />
+      ) : (
+        <motion.div
+          key="sub"
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={fadeIn}
+          className="relative h-full w-full"
+        >
+          <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-black bg-opacity-50 p-4 text-white">
+            <Button variant="ghost" onClick={() => setState("main")}>
+              <ChevronLeft className="mr-2 h-4 w-4" />
+              Back
+            </Button>
+            <h2 className="text-sm font-semibold md:text-base lg:text-lg">
+              {name}
+            </h2>
+            <div className="w-[72px]" />
           </div>
-          <Separator className="my-2" />
-          <div>
-            <h3 className="text-xl font-bold text-gray-800">Tech Stack</h3>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
-              {technologies.map((technology) => (
-                <Badge key={technology} variant="secondary">
-                  {technology}
-                </Badge>
+          <div className="max-h-[520px] overflow-auto pt-[72px]">
+            <h3 className="text-lg font-semibold text-white">Images</h3>
+            <div className="mt-4 grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {images.map((image, index) => (
+                <div key={index} className="p-1">
+                  <Card>
+                    <CardContent className="relative flex aspect-video items-center justify-center p-6">
+                      <Image
+                        src={image}
+                        alt={`${name} - Image ${index + 1}`}
+                        fill
+                        className="rounded-xl object-cover"
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            <h3 className="mt-8 text-lg font-semibold text-white">Mobile</h3>
+            <div className="mt-4 grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {mobileImages.map((image, index) => (
+                <div key={`mobile-${index}`} className="p-1">
+                  <Card>
+                    <CardContent className="relative flex aspect-[9/14] items-center justify-center p-6">
+                      <Image
+                        src={image}
+                        alt={`${name} - Mobile ${index + 1}`}
+                        fill
+                        className="rounded-xl object-cover"
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
-          <Separator className="my-2" />
-          <div>
-            <h3 className="text-xl font-bold text-gray-800">Features</h3>
-            <ul className="list-inside list-disc text-sm text-gray-600 sm:text-base">
-              {features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </CardContent>
-      <CardFooter className="flex flex-col justify-between gap-2 sm:flex-row">
-        <Button
-          variant="secondary"
-          className="w-full sm:w-auto"
-          onClick={() => window.open(githubLink, "_blank")}
-        >
-          <Github className="mr-2 h-4 w-4" />
-          View on GitHub
-        </Button>
-        <Button
-          className="w-full sm:w-auto"
-          onClick={() => window.open(liveLink, "_blank")}
-        >
-          <Globe className="mr-2 h-4 w-4" />
-          Visit Live Site
-        </Button>
-      </CardFooter>
-    </Card>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

@@ -10,15 +10,12 @@ import Contact from "@/components/contact";
 import Project from "@/components/project";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slideInFromRight = {
-  initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -50 },
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
   transition: {
-    type: "spring",
-    stiffness: 30, // Further reduced from 50
-    damping: 15, // Further reduced from 20
-    duration: 0.8, // Increased from 0.5
+    duration: 0.3,
   },
 };
 
@@ -69,7 +66,7 @@ export default function Portfolio() {
               initial="initial"
               animate="animate"
               exit="exit"
-              variants={slideInFromRight}
+              variants={fadeIn}
               className="h-full"
             >
               {renderContent()}

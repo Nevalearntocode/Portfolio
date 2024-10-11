@@ -22,7 +22,7 @@ export default function Celery({ type }: Props) {
           what have i built with {type}?
         </h3>
         <ul className="text space-y-2 text-sm text-gray-700">
-          <Airbnb />
+          <Airbnb type="redux" />
         </ul>
       </div>
     </div>
