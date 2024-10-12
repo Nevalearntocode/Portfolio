@@ -9,24 +9,24 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { skills } from "@/constants";
-import Django from "@/components/modals/django";
-import DjangoRestFramework from "@/components/modals/django-rest-framework";
-import Celery from "@/components/modals/celery";
-import JavaScript from "@/components/modals/javascript";
-import TypeScript from "@/components/modals/typescript";
-import Nextjs from "@/components/modals/nextjs";
-import ReactSkill from "@/components/modals/react-skill";
-import Redux from "@/components/modals/redux";
-import TailwindCSS from "@/components/modals/tailwindcss";
-import Shadcnui from "@/components/modals/shadcnui";
-import Python from "@/components/modals/python";
-import Prisma from "@/components/modals/prisma";
-import Drizzle from "@/components/modals/drizzle";
-import Docker from "@/components/modals/docker";
-import Git from "@/components/modals/git";
-import PostgreSQL from "@/components/modals/postgresql";
-import Redis from "@/components/modals/redis";
-import Convex from "@/components/modals/convex";
+import Django from "@/components/modals/skills/django";
+import DjangoRestFramework from "@/components/modals/skills/django-rest-framework";
+import Celery from "@/components/modals/skills/celery";
+import JavaScript from "@/components/modals/skills/javascript";
+import TypeScript from "@/components/modals/skills/typescript";
+import Nextjs from "@/components/modals/skills/nextjs";
+import ReactSkill from "@/components/modals/skills/react-skill";
+import Redux from "@/components/modals/skills/redux";
+import TailwindCSS from "@/components/modals/skills/tailwindcss";
+import Shadcnui from "@/components/modals/skills/shadcnui";
+import Python from "@/components/modals/skills/python";
+import Prisma from "@/components/modals/skills/prisma";
+import Drizzle from "@/components/modals/skills/drizzle";
+import Docker from "@/components/modals/skills/docker";
+import Git from "@/components/modals/skills/git";
+import PostgreSQL from "@/components/modals/skills/postgresql";
+import Redis from "@/components/modals/skills/redis";
+import Convex from "@/components/modals/skills/convex";
 
 type Props = {};
 

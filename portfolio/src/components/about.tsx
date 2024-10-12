@@ -17,9 +17,9 @@ export default function About() {
       ) : (
         <motion.div
           key="sub"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
           className="relative h-full w-full overflow-y-auto md:overflow-hidden"
         >

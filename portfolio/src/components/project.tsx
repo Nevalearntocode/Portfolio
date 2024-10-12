@@ -5,22 +5,32 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
-import { Project as ProjectType } from "@/types";
+import { ImageModalState, Project as ProjectType } from "@/types";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectMain from "./project-main";
-
-const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
-  transition: {
-    duration: 0.3,
-  },
-};
+import { useAppDispatch } from "@/redux/use-store";
+import { openModal } from "@/redux/slices/image-modal-slice";
 
 export default function Project(project: ProjectType) {
   const [state, setState] = useState<"main" | "sub">("main");
   const { images, mobileImages, name } = project;
+  const dispatch = useAppDispatch();
+
+  const onOpenModal = (
+    type: ImageModalState["type"],
+    name: string,
+    image: string,
+  ) => {
+    dispatch(
+      dispatch(
+        openModal({
+          type,
+          name,
+          image,
+        }),
+      ),
+    );
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -29,10 +39,10 @@ export default function Project(project: ProjectType) {
       ) : (
         <motion.div
           key="sub"
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={fadeIn}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
           className="relative h-full w-full"
         >
           <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-black bg-opacity-50 p-4 text-white">
@@ -48,12 +58,17 @@ export default function Project(project: ProjectType) {
           <div className="max-h-[520px] overflow-auto pt-[72px]">
             <h3 className="text-lg font-semibold text-white">Images</h3>
             <div className="mt-4 grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {images.map((image, index) => (
+              {images.map((item, index) => (
                 <div key={index} className="p-1">
                   <Card>
-                    <CardContent className="relative flex aspect-video items-center justify-center p-6">
+                    <CardContent
+                      className="relative flex aspect-video cursor-pointer items-center justify-center p-6"
+                      onClick={() =>
+                        onOpenModal("desktop", item.name, item.image)
+                      }
+                    >
                       <Image
-                        src={image}
+                        src={item.image}
                         alt={`${name} - Image ${index + 1}`}
                         fill
                         className="rounded-xl object-cover"
@@ -66,15 +81,20 @@ export default function Project(project: ProjectType) {
 
             <h3 className="mt-8 text-lg font-semibold text-white">Mobile</h3>
             <div className="mt-4 grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {mobileImages.map((image, index) => (
+              {mobileImages.map((item, index) => (
                 <div key={`mobile-${index}`} className="p-1">
                   <Card>
-                    <CardContent className="relative flex aspect-[9/14] items-center justify-center p-6">
+                    <CardContent
+                      className="relative flex aspect-[9/14] cursor-pointer items-center justify-center p-6"
+                      onClick={() =>
+                        onOpenModal("mobile", item.name, item.image)
+                      }
+                    >
                       <Image
-                        src={image}
+                        src={item.image}
                         alt={`${name} - Mobile ${index + 1}`}
                         fill
-                        className="rounded-xl object-cover"
+                        className="rounded-xl"
                       />
                     </CardContent>
                   </Card>

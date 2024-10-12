@@ -12,8 +12,14 @@ type Project = {
   about: string;
   features: string[];
   technologies: string[];
-  images: string[];
-  mobileImages: string[];
+  images: {
+    name: string;
+    image: string;
+  }[];
+  mobileImages: {
+    name: string;
+    image: string;
+  }[];
 };
 
 type Section = "about" | "social" | "contact" | Project;
@@ -30,4 +36,11 @@ type ModalState = {
   type: (typeof skills)[number]["name"] | null;
 };
 
-export type { Project, Section, ModalState, Skills };
+type ImageModalState = {
+  isOpen: boolean;
+  type: "mobile" | "desktop" | "";
+  name: string;
+  image: string;
+};
+
+export type { Project, Section, ModalState, Skills, ImageModalState };

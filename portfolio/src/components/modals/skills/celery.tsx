@@ -1,23 +1,20 @@
+"use client";
+
 import React from "react";
-import Airbnb from "../projects/airbnb";
-import Chat from "../projects/chat";
-import Note from "../projects/note";
-import SimpleAuthentication from "../projects/simple-authentication";
-import Auction from "../projects/auction";
+import Airbnb from "../../projects/airbnb";
 
-type Props = {
-  type: string;
-};
+type Props = { type: string };
 
-export default function Drizzle({ type }: Props) {
+export default function Celery({ type }: Props) {
   return (
     <div className="flex flex-col gap-4 px-6 pb-6">
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold">What can I do with {type}?</h3>
         <ul className="list-disc pl-5 text-sm text-gray-700">
-          <li>Basic CRUD operations</li>
-          <li>Integrate seemlessly with Auth.js (NextAuth)</li>
-          <li>Build small app quick and easy with Next.js Server Actions</li>
+          <li>Asynchronous tasks</li>
+          <li>Task scheduling</li>
+          <li>Background tasks</li>
+          <li>CronJobs</li>
         </ul>
       </div>
       <div className="flex flex-col gap-2">
@@ -25,7 +22,7 @@ export default function Drizzle({ type }: Props) {
           what have i built with {type}?
         </h3>
         <ul className="text space-y-2 text-sm text-gray-700">
-          <Auction />
+          <Airbnb type="redux" />
         </ul>
       </div>
     </div>

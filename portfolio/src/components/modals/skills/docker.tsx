@@ -1,6 +1,6 @@
 import React from "react";
-import Airbnb from "../projects/airbnb";
-import Chat from "../projects/chat";
+import Airbnb from "../../projects/airbnb";
+import Chat from "../../projects/chat";
 
 type Props = {
   type: string;

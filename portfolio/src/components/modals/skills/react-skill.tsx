@@ -1,25 +1,25 @@
 import Link from "next/link";
 import React from "react";
-import Airbnb from "../projects/airbnb";
-import Chat from "../projects/chat";
-import SimpleAuthentication from "../projects/simple-authentication";
+import Airbnb from "../../projects/airbnb";
+import Chat from "../../projects/chat";
+import Ecommerce from "../../projects/ecommerce";
 
 type Props = {
   type: string;
 };
 
-export default function TailwindCSS({ type }: Props) {
+export default function ReactSkill({ type }: Props) {
   return (
     <div className="flex flex-col gap-4 px-6 pb-6">
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold">What can i do with {type}?</h3>
         <ul className="list-disc pl-5 text-sm text-gray-700">
-          <li>Responsive Design</li>
-          <li>Quick and easy CSS with prebuilt CSS classes</li>
+          <li>I know most basic/advanced {type} concepts</li>
           <li>
-            Utilize with other tools like Shadcn/UI to speed up development
+            I can utilize advanced {type} libraries to speeding up development
             process
           </li>
+          <li>And I'm using {type} primarily through Next.js</li>
         </ul>
       </div>
       <div className="flex flex-col gap-2">
@@ -35,7 +35,6 @@ export default function TailwindCSS({ type }: Props) {
           >
             GitHub
           </Link>{" "}
-          for more detail
         </p>
       </div>
     </div>
