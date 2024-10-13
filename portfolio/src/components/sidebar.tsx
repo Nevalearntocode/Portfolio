@@ -25,7 +25,7 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
   const SidebarContent = () => (
     <div className="bg-primary p-4 text-primary-foreground">
       <h1 className="mb-4 text-lg font-bold">El Portfolio de Neva</h1>
-      <nav className="space-y-2">
+      <nav className="space-y-4">
         <Button
           variant="outline"
           className={cn(
@@ -49,7 +49,9 @@ export default function Sidebar({ setActiveSection, activeSection }: Props) {
           <span className="text-xs md:text-sm xl:text-base">Social</span>
         </Button>
         <Separator className="my-2 bg-secondary" />
-        <h2 className="mb-2 text-sm font-semibold text-secondary">Projects</h2>
+        <h2 className="mb-2 text-sm font-semibold text-secondary md:text-base xl:text-lg">
+          Projects
+        </h2>
         {projects.map((project) => (
           <Button
             key={project.id}

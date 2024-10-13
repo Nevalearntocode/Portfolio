@@ -40,8 +40,13 @@ export default function ProjectMain({ project, setState }: Props) {
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-4 lg:max-h-[calc(100vh-12rem)] lg:flex-row lg:overflow-y-auto">
-          <div className="relative h-48 w-full lg:h-[calc(100vh-16rem)] lg:max-h-[370px]">
-            <Image src={image} alt={name} fill className="rounded-xl" />
+          <div className="relative h-48 w-full rounded-xl border border-primary lg:h-[calc(100vh-16rem)] lg:max-h-[370px]">
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="cursor-pointer rounded-xl transition duration-1000 hover:scale-110"
+            />
           </div>
           <div className="relative flex h-full w-full flex-col gap-4 rounded-lg p-2 shadow-md">
             <div>
@@ -89,13 +94,15 @@ export default function ProjectMain({ project, setState }: Props) {
               View Screenshots
             </Button>
           </div>
-          <Button
-            className="w-full sm:w-auto"
-            onClick={() => window.open(liveLink, "_blank")}
-          >
-            <Globe className="mr-2 h-4 w-4" />
-            Visit Live Site
-          </Button>
+          {project.liveLink && (
+            <Button
+              className="w-full sm:w-auto"
+              onClick={() => window.open(liveLink, "_blank")}
+            >
+              <Globe className="mr-2 h-4 w-4" />
+              Visit Live Site
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </motion.div>

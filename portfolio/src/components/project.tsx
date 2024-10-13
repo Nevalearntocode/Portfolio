@@ -71,15 +71,16 @@ export default function Project(project: ProjectType) {
                         src={item.image}
                         alt={`${name} - Image ${index + 1}`}
                         fill
-                        className="rounded-xl object-cover"
+                        className="cursor-pointer rounded-xl object-cover transition duration-1000 hover:scale-110"
                       />
                     </CardContent>
                   </Card>
                 </div>
               ))}
             </div>
-
-            <h3 className="mt-8 text-lg font-semibold text-white">Mobile</h3>
+            {mobileImages.length > 0 && (
+              <h3 className="mt-8 text-lg font-semibold text-white">Mobile</h3>
+            )}
             <div className="mt-4 grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {mobileImages.map((item, index) => (
                 <div key={`mobile-${index}`} className="p-1">

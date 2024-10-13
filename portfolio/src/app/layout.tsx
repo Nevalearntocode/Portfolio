@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import ReduxProvider from "@/components/providers/redux-provider";
 import ModalProvider from "@/components/providers/modal-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,10 @@ export default function RootLayout({
       >
         <ReduxProvider>
           <ModalProvider />
-          <div className="flex h-[690px] flex-col">{children}</div>
+          <div className="flex h-[690px] flex-col">
+            <Toaster />
+            {children}
+          </div>
         </ReduxProvider>
       </body>
     </html>

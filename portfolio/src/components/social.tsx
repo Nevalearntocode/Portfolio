@@ -1,16 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import GitHubCalendar, { Activity } from "react-github-calendar";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
+import { toast } from "sonner";
 
 type Props = {};
 
 export default function Social({}: Props) {
+  const [isTimeout, setIsTimeout] = useState(false);
   const selectLastHalfYear = (
     contributions: Array<Activity>,
     months: number,
@@ -30,13 +32,23 @@ export default function Social({}: Props) {
       );
     });
   };
+
+  const onDiscordTagsCopy = () => {
+    setIsTimeout(true);
+    navigator.clipboard.writeText("calmeneva#3634");
+    toast.success("Discord tag copied to clipboard");
+    setTimeout(() => {
+      setIsTimeout(false);
+    }, 15000);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex h-full w-full items-start justify-center md:items-center"
+      className="mt-16 flex h-full w-full items-start justify-center md:mt-0 md:items-center"
     >
       <Card className="w-full max-w-3xl bg-background text-foreground">
         <CardHeader className="rounded-xl bg-primary text-primary-foreground">
@@ -50,7 +62,7 @@ export default function Social({}: Props) {
                   variant="outline"
                   className="w-32"
                   onClick={() =>
-                    window.open("https://github.com/yourusername", "_blank")
+                    window.open("https://github.com/Nevalearntocode/", "_blank")
                   }
                 >
                   <Github className="mr-2 h-4 w-4" />
@@ -61,7 +73,7 @@ export default function Social({}: Props) {
                   className="w-32"
                   onClick={() =>
                     window.open(
-                      "https://linkedin.com/in/yourusername",
+                      "https://www.linkedin.com/in/calmeneva/",
                       "_blank",
                     )
                   }
@@ -74,7 +86,7 @@ export default function Social({}: Props) {
                   className="w-32"
                   onClick={() =>
                     window.open(
-                      "https://facebook.com/yourusername", // Corrected URL
+                      "https://www.facebook.com/callme.Neva/", // Corrected URL
                       "_blank",
                     )
                   }
@@ -85,18 +97,13 @@ export default function Social({}: Props) {
                 <Button
                   variant="outline"
                   className="w-32"
-                  onClick={() =>
-                    window.open(
-                      "https://discord.com/users/yourusername", //Corrected URL
-                      "_blank",
-                    )
-                  }
+                  onClick={onDiscordTagsCopy}
                 >
                   <DiscordLogoIcon className="mr-2 h-4 w-4" />
                   Discord
                 </Button>
               </div>
-              <div className="mt-4 flex flex-col">
+              <div className="mt-0 flex flex-col md:mt-4">
                 <h3 className="mb-6 ml-4 text-lg font-semibold md:ml-0">
                   GitHub Contributions
                 </h3>

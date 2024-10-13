@@ -1,29 +1,33 @@
 import { Project, Skills } from "@/types";
-import { MapPinHouse, MessageCircle, ShoppingCart } from "lucide-react";
+import {
+  MapPinHouse,
+  MessageCircle,
+  ShoppingCart,
+  NotebookPen,
+  FolderPlus,
+} from "lucide-react";
 
 const projects: Project[] = [
   {
-    id: "chat-app",
-    name: "Real-time Chat App",
+    id: "airbnb-clone",
+    name: "Airbnb Clone",
     description:
-      "A real-time chat application built with Django Channels and Next.js.",
-    image: "/chat.png",
-    githubLink: "https://github.com/yourusername/chat-app",
-    liveLink: "https://chat-app-demo.vercel.app",
-    icon: MessageCircle,
+      "A full-stack Airbnb clone with booking functionality and user authentication.",
+    image: "/projects/airbnb/airbnb.png",
+    githubLink: "https://github.com/Nevalearntocode/drf_next_airbnb",
+    liveLink: "https://django-nextjs-airbnb.vercel.app/",
+    icon: MapPinHouse,
     about:
       "A real-time chat application built with Django Channels and Next.js.",
     features: [
+      "Booking system",
       "Real-time communication",
-      "Authentication",
-      "Server management",
+      "Asynchronous update reservation status",
       "Responsive design",
     ],
     technologies: [
       "Django",
       "Django Channels",
-      "DRF",
-      "Redis",
       "Next.js",
       "TypeScript",
       "Redux",
@@ -61,14 +65,14 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "airbnb-clone",
-    name: "Airbnb Clone",
+    id: "chat-app",
+    name: "Real-time Chat App",
     description:
-      "A full-stack Airbnb clone with booking functionality and user authentication.",
-    image: "/placeholder.svg?height=300&width=400&text=Airbnb+Clone",
-    githubLink: "https://github.com/yourusername/airbnb-clone",
-    liveLink: "https://airbnb-clone-demo.vercel.app",
-    icon: MapPinHouse,
+      "A real-time chat application built with Django Channels and Next.js.",
+    image: "/projects/chat/chat.png",
+    githubLink: "https://github.com/Nevalearntocode/Django-Nextjs-Chat",
+    liveLink: "https://django-nextjs-chat.vercel.app/",
+    icon: MessageCircle,
     about:
       "A real-time chat application built with Django Channels and Next.js.",
     features: [
@@ -80,22 +84,48 @@ const projects: Project[] = [
     technologies: [
       "Django",
       "Django Channels",
+      "DRF",
+      "Redis",
       "Next.js",
       "TypeScript",
       "Redux",
       "TailwindCSS",
     ],
-    images: [],
-    mobileImages: [],
+    images: [
+      { name: "homepage", image: "/projects/chat/home-page.png" },
+      {
+        name: "server landing page",
+        image: "/projects/chat/server-landing-page.png",
+      },
+      { name: "chat interface", image: "/projects/chat/chat-interface.png" },
+
+      { name: "search", image: "/projects/chat/search-2.png" },
+      { name: "search", image: "/projects/chat/search.png" },
+    ],
+    mobileImages: [
+      { name: "mobile-homepage", image: "/projects/chat/mobile-home-page.png" },
+      {
+        name: "mobile homepage",
+        image: "/projects/chat/mobile-home-page-2.png",
+      },
+      {
+        name: "mobile server landing page",
+        image: "/projects/chat/mobile-server-landing-page.png",
+      },
+      {
+        name: "mobile chat interface",
+        image: "/projects/chat/mobile-chat-interface.png",
+      },
+    ],
   },
   {
     id: "ecommerce-cms",
-    name: "E-commerce CMS",
+    name: "Ecommerce CMS",
     description:
       "A content management system for e-commerce websites with inventory management.",
-    image: "/placeholder.svg?height=300&width=400&text=E-commerce+CMS",
-    githubLink: "https://github.com/yourusername/ecommerce-cms",
-    liveLink: "https://ecommerce-cms-demo.vercel.app",
+    image: "/projects/ecommerce/product.png",
+    githubLink: "https://github.com/Nevalearntocode/ecommerce-admin",
+    liveLink: "https://ecommerce-admin-swart-six.vercel.app/",
     icon: ShoppingCart,
     about:
       "A real-time chat application built with Django Channels and Next.js.",
@@ -113,7 +143,121 @@ const projects: Project[] = [
       "Redux",
       "TailwindCSS",
     ],
-    images: [],
+    images: [
+      {
+        name: "login and register",
+        image: "/projects/ecommerce/login-register.png",
+      },
+      { name: "homepage", image: "/projects/ecommerce/homepage.png" },
+      { name: "settings", image: "/projects/ecommerce/settings.png" },
+      { name: "staff", image: "/projects/ecommerce/staff.png" },
+      { name: "staff", image: "/projects/ecommerce/staff-2.png" },
+      { name: "billboard", image: "/projects/ecommerce/billboard.png" },
+      { name: "billboard", image: "/projects/ecommerce/billboard-2.png" },
+      { name: "size", image: "/projects/ecommerce/size.png" },
+      { name: "color", image: "/projects/ecommerce/color.png" },
+      { name: "product", image: "/projects/ecommerce/product-2.png" },
+      { name: "product", image: "/projects/ecommerce/product.png" },
+    ],
+    mobileImages: [
+      {
+        name: "mobile homepage",
+        image: "/projects/ecommerce/mobile-homepage.png",
+      },
+      {
+        name: "mobile navigation",
+        image: "/projects/ecommerce/mobile-navigation.png",
+      },
+      { name: "mobile staff", image: "/projects/ecommerce/mobile-staff.png" },
+      {
+        name: "mobile billboard",
+        image: "/projects/ecommerce/mobile-billboard.png",
+      },
+      {
+        name: "mobile product",
+        image: "/projects/ecommerce/mobile-product.png",
+      },
+    ],
+  },
+  {
+    id: "file-drive",
+    name: "File Storage",
+    description:
+      "A file storage app to learn about convex, search params, clerk, webhooks.",
+    image: "/projects/file-drive/file-drive.png",
+    githubLink: "https://github.com/Nevalearntocode/file-storage",
+    icon: FolderPlus,
+    about:
+      "A file storage app to learn about convex, search params, clerk, webhooks.",
+    features: [
+      "File upload/download/management",
+      "Personal and organizational features",
+      "Advanced filtering",
+      "Cron jobs",
+    ],
+    technologies: ["Convex", "Clerk", "Next.js", "TypeScript", "TailwindCSS"],
+    images: [
+      { name: "archive-view", image: "/projects/file-drive/archive-view.png" },
+      {
+        name: "favorite-view",
+        image: "/projects/file-drive/favorite-view.png",
+      },
+      { name: "file-drive", image: "/projects/file-drive/file-drive.png" },
+      { name: "main-view", image: "/projects/file-drive/main-view.png" },
+      { name: "restore-view", image: "/projects/file-drive/restore-view.png" },
+      {
+        name: "search-and-actions-view",
+        image: "/projects/file-drive/search-and-actions-view.png",
+      },
+      {
+        name: "table-and-filters-view",
+        image: "/projects/file-drive/table-and-filters-view.png",
+      },
+      { name: "upload-view", image: "/projects/file-drive/upload-view.png" },
+    ],
+    mobileImages: [],
+  },
+  {
+    id: "auction",
+    name: "Auction",
+    description:
+      "An auction app to learn about Drizzle and Knock (notification).",
+    image: "/projects/auction/auction.png",
+    githubLink: "https://github.com/Nevalearntocode/auction-app",
+    icon: NotebookPen,
+    about: "An auction app to learn about Drizzle and Knock (notification).",
+    features: [
+      "User authentication",
+      "Create an auction, bid on an auction, and automatically close the auction",
+      "Cloudflare R2 for image storage",
+      "Knock for bid notifications (when someone outbids you)",
+    ],
+    technologies: [
+      "Drizzle",
+      "NextAuth",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+    ],
+    images: [
+      { name: "Homepage", image: "/projects/auction/auction.png" },
+      {
+        name: "Homepage",
+        image: "/projects/auction/auctions-display.png",
+      },
+      {
+        name: "Bidding page",
+        image: "/projects/auction/bidding-display.png",
+      },
+      {
+        name: "Create auction",
+        image: "/projects/auction/create-auction-n-noti-display.png",
+      },
+      {
+        name: "No bids page",
+        image: "/projects/auction/no-bids-display.png",
+      },
+    ],
     mobileImages: [],
   },
 ];

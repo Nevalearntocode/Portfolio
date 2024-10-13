@@ -7,7 +7,7 @@ type Project = {
   description: string;
   image: string;
   githubLink: string;
-  liveLink: string;
+  liveLink?: string;
   icon: typeof TypeIcon;
   about: string;
   features: string[];
