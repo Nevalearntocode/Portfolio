@@ -21,7 +21,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full w-full overflow-y-auto md:overflow-hidden"
+          className="relative h-full w-full overflow-y-auto lg:overflow-hidden"
         >
           <div className="sticky top-0 z-10 mb-4 flex items-center justify-between bg-background p-4 shadow-md md:static md:shadow-none">
             <Button
@@ -36,7 +36,7 @@ export default function About() {
             <h2 className="text-lg font-semibold">More About Me</h2>
             <div className="w-20"></div> {/* Spacer for centering */}
           </div>
-          <div className="grid grid-cols-1 gap-6 p-4 md:h-[calc(100%-4rem)] md:grid-cols-2 md:gap-8 md:p-8">
+          <div className="grid grid-cols-1 gap-6 p-4 pb-24 md:grid-cols-2 md:gap-8 md:p-8 lg:h-[calc(100%-4rem)]">
             <Card className="h-full">
               <CardHeader className="mb-4 rounded-xl bg-primary">
                 <CardTitle className="text-lg text-white">Skills</CardTitle>

@@ -40,7 +40,7 @@ export default function ProjectMain({ project, setState }: Props) {
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-4 lg:max-h-[calc(100vh-12rem)] lg:flex-row lg:overflow-y-auto">
-          <div className="relative h-48 w-full rounded-xl border border-primary lg:h-[calc(100vh-16rem)] lg:max-h-[370px]">
+          <div className="relative h-48 w-full rounded-xl border border-t-0 border-gray-200 shadow-md lg:h-[calc(100vh-16rem)] lg:max-h-[370px]">
             <Image
               src={image}
               alt={name}

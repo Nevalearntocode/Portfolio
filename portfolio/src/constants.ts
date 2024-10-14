@@ -32,6 +32,8 @@ const projects: Project[] = [
       "TypeScript",
       "Redux",
       "TailwindCSS",
+      "PostgreSQL",
+      "Redis",
     ],
     images: [
       { name: "homepage", image: "/projects/airbnb/homepage-1.png" },
@@ -84,12 +86,12 @@ const projects: Project[] = [
     technologies: [
       "Django",
       "Django Channels",
-      "DRF",
-      "Redis",
       "Next.js",
       "TypeScript",
       "Redux",
       "TailwindCSS",
+      "PostgreSQL",
+      "Redis",
     ],
     images: [
       { name: "homepage", image: "/projects/chat/home-page.png" },
@@ -122,27 +124,20 @@ const projects: Project[] = [
     id: "ecommerce-cms",
     name: "Ecommerce CMS",
     description:
-      "A content management system for e-commerce websites with inventory management.",
+      "A content management system for e-commerce websites with store, employee, products management.",
     image: "/projects/ecommerce/product.png",
     githubLink: "https://github.com/Nevalearntocode/ecommerce-admin",
     liveLink: "https://ecommerce-admin-swart-six.vercel.app/",
     icon: ShoppingCart,
     about:
-      "A real-time chat application built with Django Channels and Next.js.",
+      "A content management system for e-commerce websites with store, employee, products management.",
     features: [
-      "Real-time communication",
-      "Authentication",
-      "Server management",
+      "Staff system (roles and permissions)",
+      "Multiple store-types",
+      "Tables and charts display",
       "Responsive design",
     ],
-    technologies: [
-      "Django",
-      "Django Channels",
-      "Next.js",
-      "TypeScript",
-      "Redux",
-      "TailwindCSS",
-    ],
+    technologies: ["Prisma", "Next.js", "TypeScript", "TailwindCSS", "PostgreSQL"],
     images: [
       {
         name: "login and register",
@@ -238,6 +233,7 @@ const projects: Project[] = [
       "Next.js",
       "TypeScript",
       "TailwindCSS",
+      "PostgreSQL",
     ],
     images: [
       { name: "Homepage", image: "/projects/auction/auction.png" },
