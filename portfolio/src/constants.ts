@@ -123,21 +123,25 @@ const projects: Project[] = [
   {
     id: "ecommerce-cms",
     name: "Ecommerce CMS",
-    description:
-      "A content management system for e-commerce websites with store, employee, products management.",
-    image: "/projects/ecommerce/product.png",
+    description: "A content management system for e-commerce websites.",
+    image: "/projects/ecommerce/billboard.png",
     githubLink: "https://github.com/Nevalearntocode/ecommerce-admin",
     liveLink: "https://ecommerce-admin-swart-six.vercel.app/",
     icon: ShoppingCart,
-    about:
-      "A content management system for e-commerce websites with store, employee, products management.",
+    about: "A content management system for e-commerce websites.",
     features: [
       "Staff system (roles and permissions)",
       "Multiple store-types",
       "Tables and charts display",
       "Responsive design",
     ],
-    technologies: ["Prisma", "Next.js", "TypeScript", "TailwindCSS", "PostgreSQL"],
+    technologies: [
+      "Prisma",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+    ],
     images: [
       {
         name: "login and register",
