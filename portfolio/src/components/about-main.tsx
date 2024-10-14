@@ -46,7 +46,7 @@ export default function AboutMain({ setState }: Props) {
             <Button
               variant="default"
               onClick={() => setState("sub")}
-              className="mt-4 flex self-end whitespace-nowrap md:mt-0"
+              className="mt-4 flex whitespace-nowrap md:mt-0"
             >
               More about me
             </Button>

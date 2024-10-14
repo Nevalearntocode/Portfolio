@@ -23,7 +23,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="relative h-full w-full overflow-y-auto lg:overflow-hidden"
         >
-          <div className="sticky top-0 z-10 mb-4 flex items-center justify-between bg-background p-4 shadow-md md:static md:shadow-none">
+          <div className="sticky top-0 z-10 mb-4 flex items-center justify-between bg-background bg-black bg-opacity-50 p-4 text-white shadow-md md:static md:shadow-none">
             <Button
               variant="ghost"
               size="sm"

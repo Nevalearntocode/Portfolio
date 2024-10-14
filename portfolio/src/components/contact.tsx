@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { Check, Copy, Facebook, Github, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
+import CVDownloadCTA from "./cv-download-cta";
 
 type Props = {};
 
@@ -31,18 +32,18 @@ export default function Contact({}: Props) {
   };
 
   return (
-    <div className="mt-20 flex h-full w-full items-start justify-center md:mt-0 md:items-center">
+    <div className="flex h-full w-full items-start justify-center md:mt-0 md:items-center">
       <Card className="w-full md:w-1/2">
         <CardHeader>
           <CardTitle>Contact Me</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-6">
-          <p className="text-sm font-bold sm:text-lg md:text-xl">
+          <p className="text-sm font-bold sm:text-lg md:text-sm lg:text-xl">
             Feel free to reach out to me at:
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <p>
+              <p className="text-xs lg:text-base">
                 <span className="font-semibold">Email:</span>{" "}
                 hmtam110501@gmail.com
               </p>
@@ -62,9 +63,11 @@ export default function Contact({}: Props) {
               )}
             </div>
             <div className="flex items-center gap-4">
-              <p>
-                <span className="font-semibold">Phone number:</span> +84 853 151
-                319
+              <p className="text-xs lg:text-base">
+                <span className="font-semibold">
+                  Phone number: <br className="block lg:hidden" />
+                </span>{" "}
+                +84 853 151 319
               </p>
               {isTimeOut ? (
                 <Button variant={`outline`} size={`icon`} className="ml-auto">
@@ -81,10 +84,10 @@ export default function Contact({}: Props) {
                 </Button>
               )}
             </div>
-            <div className="mt-2 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            <div className="mt-2 grid grid-cols-2 gap-4 xl:grid-cols-4">
               <Button
                 variant="outline"
-                className="w-32"
+                className="max-w-32"
                 onClick={() =>
                   window.open("https://github.com/Nevalearntocode/", "_blank")
                 }
@@ -94,7 +97,7 @@ export default function Contact({}: Props) {
               </Button>
               <Button
                 variant="outline"
-                className="w-32"
+                className="max-w-32"
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/calmeneva/",
@@ -107,12 +110,9 @@ export default function Contact({}: Props) {
               </Button>
               <Button
                 variant="outline"
-                className="w-32"
+                className="max-w-32"
                 onClick={() =>
-                  window.open(
-                    "https://www.facebook.com/callme.Neva/", // Corrected URL
-                    "_blank",
-                  )
+                  window.open("https://www.facebook.com/callme.Neva/", "_blank")
                 }
               >
                 <Facebook className="mr-2 h-4 w-4" />
@@ -120,7 +120,7 @@ export default function Contact({}: Props) {
               </Button>
               <Button
                 variant="outline"
-                className="w-32"
+                className="max-w-32"
                 onClick={onDiscordTagsCopy}
                 disabled={isTimeOut}
               >
@@ -128,6 +128,7 @@ export default function Contact({}: Props) {
                 Discord
               </Button>
             </div>
+            <CVDownloadCTA />
           </div>
         </CardContent>
       </Card>
