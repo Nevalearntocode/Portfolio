@@ -1,14 +1,14 @@
 # About Me:
 Hi, my name is Minh Tâm 
     <br>
-I'm full-stack developer specializing in Django and Nextjs, I've built various project with advanced features to hone and prove my skills and refining my resume for the job hunt.
+I'm a full-stack developer specializing in Django and Nextjs, I've built various project with advanced features to hone and prove my skills, in the meantime refining my resume for the job hunt.
     <br>
     <br>
 Throughout my coding journey, I've learned that you can't possibly know everything and you will never be ready for everything. There are always new problems and you always need to learn new things to solve them. I've got my mindset now. "Strive for progress, not perfection".
 <br>
 <br>
 And you can see my portfolio website
-[here](portfolio-od4ymt0rf-nevalearntocodes-projects.vercel.app)
+[here](https://nevarealm.info/)
 
 ## Socials:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/callme.Neva) 
@@ -30,8 +30,8 @@ And you can see my portfolio website
 | Name                          | description                                                                                           | repo                                                          | live demo                                            |
 | :---------------------------- | :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ | :--------------------------------------------------- |
 | CMS Ecommerce Admin Dashboard | Like the name, but you can have multiple store types add employees to your store and give them roles. | [view](https://github.com/Nevalearntocode/ecommerce-admin)    | [view](https://ecommerce-admin-swart-six.vercel.app) |
-| Firebase note app             | Just a simple note app to learn how to do CRUD and file upload in firebase with nextjs                | [view](https://github.com/Nevalearntocode/firebase-noteapp)   | [view](https://note-app-82370.web.app)               |
+| Airbnb clone (django backend) | Practice django rest framework and related libraries                                                  | [view](https://github.com/Nevalearntocode/drf_next_airbnb)    | [view](https://django-nextjs-airbnb.vercel.app)      |
 | Chat App                      | A real-time chat application built with Django Channels and Next.js.                                  | [view](https://github.com/Nevalearntocode/Django-Nextjs-Chat) | [view](https://django-nextjs-chat.vercel.app)        |
-| Airbnb clone (django backend) | Practice django rest framework and related libraries                                                  | [view](https://github.com/Nevalearntocode/drf_next_airbnb)    | ...                                                  |
-| Auction                       | Simple auction app to learn about notification, drizzle and nextjs                                    | [view](https://github.com/Nevalearntocode/auction-app)        | ...                                                  |
 | Drive                         | File upload project to learn about convex, search params, clerk, webhooks                             | [view](https://github.com/Nevalearntocode/file-storage)       | ...                                                  |
+| Auction                       | Simple auction app to learn about notification, drizzle and nextjs                                    | [view](https://github.com/Nevalearntocode/auction-app)        | ...                                                  |
+| Firebase note app             | Just a simple note app to learn how to do CRUD and file upload in firebase with nextjs                | [view](https://github.com/Nevalearntocode/firebase-noteapp)   | [view](https://note-app-82370.web.app)               |
